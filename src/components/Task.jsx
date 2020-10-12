@@ -1,14 +1,15 @@
 import React from "react";
 
 function Task(props){
-	return(<span>
-		<ul>
+	return(
+		
+		<ul className="line">
 		<li>{props.content}</li>
 		<li>{props.prior}</li>
 		<li>{props.deadline}</li>
 		<li>{props.isdone}</li>
-		<input onClick = {()=>{props.deleteTasks(props._id);}} type="button" value="X task"/>
+		<input className="btn btn-dark m-1" onClick = {()=>{props.deleteTasks(props._id);}} type="button" value="x"/>
 		</ul>
-	</span>);
+);
 }
 export default Task;

@@ -68,18 +68,27 @@ useEffect(()=>{
 },[click,submit]);
 
 	return(
-		<div>
+		<div className="container cont">
+		<div className="row justify-content-center align-items-center text-center">
+		<div className="col-2"></div>
+		<div className ="col-8">
 			<h1>Hello {params.uname}</h1>
 			<form onSubmit = {handleSubmit}>
-				<input 
+				<input className="form-control m-2"
 					onChange ={handleProjName}
 					type ="textbox" 
 					name ="name" 
 					value={projname} 
-					placeholder ="enter project name"/>
+					placeholder ="Enter project name"/>
 
-				<input type ="submit" value="create project"/>
+				<input className="btn btn-dark m-1" type ="submit" value="create project"/>
+				<br></br>
+				<br></br>
+				<h1>Your Projects</h1>
 			</form>
+			</div>
+			<div className="col-2"></div>
+			</div>
 			{store.map(createForm)}
 		</div>
 		)

@@ -11,12 +11,12 @@ function Form(props){
 	function getDeadline(event){setDeadline(event.target.value);}
 	function getIsDone(event){setIsDone(event.target.value);}
 
-	return(<form>
-		<input onChange ={getContent}value={content} type="textbox" placeholder="input content"/>
-		<input onChange ={getPrior} value={prior}type="textbox" placeholder="input prior"/>
-		<input onChange ={getDeadline} value={deadline}type="textbox" placeholder="input deadline"/>
-		<input onChange ={getIsDone}value={isdone}type="textbox" placeholder="input isdone"/>
-		<input onClick = {()=>{props.makePostTasks(content,prior,deadline,isdone)}} type = "button"/>
+	return(<form className="text-center">
+		<input className="form-control m-2 " onChange ={getContent}value={content} type="textbox" placeholder="Input content"/>
+		<input className="form-control m-2 " onChange ={getPrior} value={prior}type="textbox" placeholder="Input prior"/>
+		<input className="form-control m-2 " onChange ={getDeadline} value={deadline}type="textbox" placeholder="Input deadline"/>
+		<input className="form-control m-2 " onChange ={getIsDone}value={isdone}type="textbox" placeholder="Input isdone"/>
+		<input className="btn btn-dark m-1 " onClick = {()=>{props.makePostTasks(content,prior,deadline,isdone)}} type = "button" value="Create task"/>
 	</form>);
 }
 export default Form;

@@ -33,24 +33,31 @@ function Register(){
 
 		event.preventDefault();
 	}
-	return isRedirect ? (<Redirect to={redir}/>):(<div>
+	return isRedirect ? (<Redirect to={redir}/>):(<div className="container cont">
+		<div className="row centralize justify-content-center align-items-center text-center">
+		<div className="col-2"></div>
+		<div className="col-8">
 		<form onSubmit={handleSubmit}>
-			<input 
+			<h1>Registration Form</h1>
+			<input className="form-control m-2"
 				onChange={handleUname} 
 				type ="textbox" 
-				placeholder ="input uname" 
+				placeholder ="Input uname" 
 				name = "username" 
 				value={uname}/>
-			<input 
+			<input className="form-control m-2"
 				onChange ={handlePassword} 
 				type = "password" 
-				placeholder = "input password" 
+				placeholder = "Input password" 
 				name ="password" 
 				value={password}/>
-			<input 
+			<input className="btn btn-dark m-1 "
 				type ="submit" 
 				value ="Register"/>
 		</form>
+		</div>
+		<div className="col-2"></div>
+		</div>
 	</div>
 	)
 }

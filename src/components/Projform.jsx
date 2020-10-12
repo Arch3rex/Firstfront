@@ -75,14 +75,20 @@ function showForm(){
 
 	},[delTask,postTasks]);
 
-	return(<div>
+	return(<div className="container cont">
+		<div className="row justify-content-center align-items-center text-center">
+		<div className="col-2"></div>
+		<div className="col-8">
 		<h3>{props.name}</h3>
 		<span> 
-		<input onClick = {()=>{props.handleClick(props._id);}} type="button" value="X"/>
-		<input onClick ={showForm} type = "button" value ="+Task"/>	 
+		<input className="btn btn-dark m-1 buttonwidth" onClick = {()=>{props.handleClick(props._id);}} type="button" value="X"/>
+		<input className="btn btn-dark m-1 buttonwidth" onClick ={showForm} type = "button" value ="+Task"/>	 
 		</span>
 		{tasks.map(createTasks)}
 		{form ? ReactDOM.createPortal(<Form makePostTasks={makePostTasks}/>,document.getElementById("portal")):null}
+	</div>
+	<div className="col-2"></div>
+	</div>
 	</div>)
 }
 export default Projform;

@@ -37,22 +37,29 @@ function Login(){
 
 	
 
-	return isRedirect ? (<Redirect to ={redir}/>):(<div>
+	return isRedirect ? (<Redirect to ={redir}/>):(<div className="container">
+		<div className="row centralize justify-content-center text-center align-items-center">
+		<div className="col-2"></div>
+		<div className="col-8">
+		<h1>Login Form</h1>
 		<form onSubmit={handleSubmit}>
-			<input 
+			<input className="form-control m-2"
 				onChange={handleUser} 
 				type ="textbox" 
-				placeholder ="input uname" 
+				placeholder ="Input uname" 
 				name = "username" 
 				value={user}/>
-			<input 
+			<input className="form-control m-2"
 				onChange ={handlePwd} 
 				type = "password" 
-				placeholder = "input password" 
+				placeholder = "Input password" 
 				name ="password" 
 				value={pwd}/>
-			<input type ="submit" value ="Login"/>
+			<input className="btn btn-dark m-1" type ="submit" value ="Login"/>
 		</form>
+		</div>
+		<div className="col-2"></div>
+		</div>
 	</div>
 	)
 }
