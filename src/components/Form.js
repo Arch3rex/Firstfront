@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { func } from 'prop-types';
 
 function Form(props) {
-  const [content, setContent]= useState('');
+  const [content, setContent] = useState('');
   const [prior, setPrior] = useState('');
   const [deadline, setDeadline] = useState('');
   const [isdone, setIsDone] = useState('');
@@ -19,35 +20,50 @@ function Form(props) {
     setIsDone(event.target.value);
   }
 
-  return (<form className="text-center">
-    <input
-      className="form-control m-2 "
-      onChange ={getContent}value={content}
-      type="textbox"
-      placeholder="Input content"/>
-    <input
-      className="form-control m-2 "
-      onChange ={getPrior}
-      value={prior}
-      type="textbox"
-      placeholder="Input prior"/>
-    <input
-      className="form-control m-2 "
-      onChange ={getDeadline}
-      value={deadline}
-      type="textbox"
-      placeholder="Input deadline"/>
-    <input
-      className="form-control m-2 "
-      onChange ={getIsDone}
-      value={isdone}
-      type="textbox"
-      placeholder="Input isdone"/>
-    <input
-      className="btn btn-dark m-1 "
-      onClick = {()=>{
-        props.makePostTasks(content, prior, deadline, isdone);
-      }} type = "button" value="Create task"/>
-  </form>);
+  return (
+    <form className="text-center">
+      <input
+        className="form-control m-2 "
+        onChange={getContent}
+        value={content}
+        type="textbox"
+        placeholder="Input content"
+      />
+      <input
+        className="form-control m-2 "
+        onChange={getPrior}
+        value={prior}
+        type="textbox"
+        placeholder="Input prior"
+      />
+      <input
+        className="form-control m-2 "
+        onChange={getDeadline}
+        value={deadline}
+        type="textbox"
+        placeholder="Input deadline"
+      />
+      <input
+        className="form-control m-2 "
+        onChange={getIsDone}
+        value={isdone}
+        type="textbox"
+        placeholder="Input isdone"
+      />
+      <input
+        className="btn btn-dark m-1 "
+        onClick={() => {
+          props.makePostTasks(content, prior, deadline, isdone);
+        }}
+        type="button"
+        value="Create task"
+      />
+    </form>
+  );
 }
+
+Form.propTypes = {
+  makePostTasks: func,
+};
+
 export default Form;
