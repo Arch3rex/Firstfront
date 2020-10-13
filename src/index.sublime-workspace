@@ -1,0 +1,764 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"margin",
+				"margin-top\tproperty"
+			],
+			[
+				"tex",
+				"text-align\tproperty"
+			],
+			[
+				"content",
+				"align-content\tproperty"
+			],
+			[
+				"text-a",
+				"text-align\tproperty"
+			],
+			[
+				"it",
+				"align-items\tproperty"
+			],
+			[
+				"mar",
+				"margin-right\tproperty"
+			],
+			[
+				"margi",
+				"margin-left\tproperty"
+			],
+			[
+				"del",
+				"delTask"
+			],
+			[
+				"setRe",
+				"setRenderTasks"
+			],
+			[
+				"getele",
+				"getElementById\t( elementId: DOMString ): Element Document"
+			],
+			[
+				"dele",
+				"deleteTasks"
+			],
+			[
+				"hande",
+				"handleClick"
+			],
+			[
+				"handle",
+				"handleClick"
+			],
+			[
+				"proje",
+				"projname"
+			],
+			[
+				"name",
+				"name\t: DOMString Window"
+			],
+			[
+				"response",
+				"response"
+			],
+			[
+				"user",
+				"user"
+			],
+			[
+				"React",
+				"ReactDOM"
+			],
+			[
+				"login",
+				"login"
+			],
+			[
+				"lo",
+				"Login"
+			],
+			[
+				"new",
+				"newProject"
+			],
+			[
+				"proj",
+				"projname"
+			],
+			[
+				"check",
+				"checkPwd"
+			],
+			[
+				"err",
+				"err"
+			],
+			[
+				"Task",
+				"Task"
+			],
+			[
+				"User",
+				"User"
+			],
+			[
+				"sto",
+				"story1"
+			],
+			[
+				"OK",
+				"OK"
+			],
+			[
+				"task",
+				"TaskSchema"
+			],
+			[
+				"projec",
+				"projectName"
+			],
+			[
+				"bod",
+				"body"
+			],
+			[
+				"title",
+				"title\t: DOMString Document"
+			],
+			[
+				"string",
+				"String\t( value: any ): String String"
+			],
+			[
+				"text",
+				"text"
+			],
+			[
+				"i",
+				"index"
+			],
+			[
+				"entry",
+				"Entry"
+			],
+			[
+				"Entry",
+				"Entrycontroll"
+			],
+			[
+				"getEle",
+				"getElementById\t( elementId: DOMString ): Element Document"
+			],
+			[
+				"article",
+				"articleTitle"
+			],
+			[
+				"artic",
+				"articleTitle"
+			],
+			[
+				"String",
+				"String\t( value: any ): String String"
+			],
+			[
+				"cosnole",
+				"console_log"
+			],
+			[
+				"chec",
+				"checkedItemId"
+			],
+			[
+				"fund",
+				"foundList"
+			],
+			[
+				"found",
+				"foundList"
+			],
+			[
+				"che",
+				"checkedItemId"
+			],
+			[
+				"red",
+				"redirect"
+			],
+			[
+				"re",
+				"results"
+			],
+			[
+				"defau",
+				"defaultTasks"
+			],
+			[
+				"rev",
+				"review"
+			],
+			[
+				"fruit",
+				"fruitSchema"
+			],
+			[
+				"com",
+				"compose"
+			],
+			[
+				"contac",
+				"contactContent"
+			],
+			[
+				"about",
+				"aboutContent"
+			],
+			[
+				"post",
+				"postitem"
+			],
+			[
+				"posti",
+				"postitems"
+			],
+			[
+				"l",
+				"lang\tAttr"
+			],
+			[
+				"city",
+				"citybox"
+			],
+			[
+				"wether",
+				"weatherDescription"
+			],
+			[
+				"wri",
+				"write\t( text_..: DOMString ): void Document"
+			],
+			[
+				"weather",
+				"weatherdata"
+			],
+			[
+				"res",
+				"response\t XMLHttpRequest"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"p",
+				"placeholder\tAttr"
+			],
+			[
+				"arr",
+				"arr2"
+			],
+			[
+				"game",
+				"gamePattern"
+			],
+			[
+				"compare",
+				"compareArray"
+			],
+			[
+				"le",
+				"length\t: int Function"
+			],
+			[
+				"curren",
+				"currentlevel"
+			],
+			[
+				"use",
+				"userClickedPattern"
+			],
+			[
+				"Us",
+				"userClickedPattern"
+			],
+			[
+				"ran",
+				"randomSequence"
+			],
+			[
+				"curre",
+				"currentlevel"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"current",
+				"currentColor"
+			],
+			[
+				"ra",
+				"randomColor"
+			],
+			[
+				"pal",
+				"playelem"
+			],
+			[
+				"rand",
+				"randomSequence"
+			],
+			[
+				"rando",
+				"randomColor"
+			],
+			[
+				"bu",
+				"buttonColours"
+			],
+			[
+				"foo",
+				"floor\t( x: number ): number Math"
+			],
+			[
+				"console",
+				"console_log"
+			],
+			[
+				"but",
+				"buttonAnimation"
+			],
+			[
+				"conso",
+				"console_log"
+			],
+			[
+				"su",
+				"surname"
+			],
+			[
+				"text-decor",
+				"text-decoration-color\tproperty"
+			],
+			[
+				"d",
+				"drum"
+			],
+			[
+				"get",
+				"getElementbyClass"
+			],
+			[
+				"fo",
+				"form-control"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"t",
+				"type\tAttr"
+			],
+			[
+				"grid-te",
+				"grid-template-rows\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"flrx",
+				"flex-grow\tproperty"
+			],
+			[
+				"flex",
+				"flex-start\talign-items"
+			],
+			[
+				"hea",
+				"header\tTag"
+			],
+			[
+				"background",
+				"background-color\tproperty"
+			],
+			[
+				"border-col",
+				"border-collapse\tproperty"
+			],
+			[
+				"list",
+				"list-style-type\tproperty"
+			],
+			[
+				"borde",
+				"border-radius\tproperty"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"te",
+				"text-align\tproperty"
+			],
+			[
+				"word",
+				"word-spacing\tproperty"
+			],
+			[
+				"font-st",
+				"font-style\tproperty"
+			],
+			[
+				"bor",
+				"border-right\tproperty"
+			],
+			[
+				"ma",
+				"margin\tproperty"
+			],
+			[
+				"font",
+				"font-family\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control:install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: En",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: De",
+				"Package Control: Disable Package"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/arch3rex/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/arch3rex/Documents/Firstfrontend/project-app/src/components/Login.jsx",
+		"/home/arch3rex/.config/sublime-text-3/Packages/JavaScript Completions/JavaScript-Completions.sublime-settings",
+		"/home/arch3rex/Documents/Firstfrontend/project-app/public/styles.css",
+		"/home/arch3rex/Documents/Firstfrontend/project-app/src/components/Form.jsx",
+		"/home/arch3rex/Documents/Firstfrontend/project-app/src/components/Projform.jsx",
+		"/home/arch3rex/Documents/Firstfrontend/project-app/src/components/Task.jsx",
+		"/home/arch3rex/Documents/Firstfrontend/project-app/src/components/Projects.jsx",
+		"/home/arch3rex/Documents/Firstfrontend/project-app/src/components/Register.jsx",
+		"/home/arch3rex/Documents/Firstfrontend/project-app/src/components/Start.jsx",
+		"/home/arch3rex/Documents/Firstfrontend/project-app/public/index.html",
+		"/home/arch3rex/Documents/Project/package.json",
+		"/home/arch3rex/Documents/Project/backend/.env",
+		"/home/arch3rex/Documents/Project/frontend/project-app/src/components/Register.jsx",
+		"/home/arch3rex/Documents/Project/frontend/project-app/src/components/Projform.jsx",
+		"/home/arch3rex/Documents/Project/frontend/project-app/src/components/Projects.jsx",
+		"/home/arch3rex/Documents/Project/frontend/project-app/src/components/Login.jsx",
+		"/home/arch3rex/Documents/Project/frontend/project-app/src/components/Form.jsx",
+		"/home/arch3rex/Documents/Project/backend/server.js",
+		"/home/arch3rex/Desktop/mongoconnect",
+		"/home/arch3rex/Documents/Project/backend/Schemas.js",
+		"/home/arch3rex/Documents/Project/frontend/project-app/src/components/Task.jsx",
+		"/home/arch3rex/Documents/Project/frontend/project-app/public/index.html",
+		"/home/arch3rex/Documents/Project/frontend/project-app/node_modules/@webassemblyjs/helper-buffer/lib/compare.js",
+		"/home/arch3rex/Documents/Project/frontend/project-app/src/components/App.jsx",
+		"/home/arch3rex/Documents/Project/frontend/project-app/src/components/Modal.jsx",
+		"/home/arch3rex/Downloads/chivo.jsx",
+		"/home/arch3rex/Desktop/chivo.jsx",
+		"/home/arch3rex/Documents/Project/frontend/project-app/src/components/Start.jsx",
+		"/home/arch3rex/Documents/Project/frontend/project-app/src/index.js",
+		"/home/arch3rex/Desktop/chivo.js",
+		"/home/arch3rex/Documents/Project/frontend/app/src/components/App.jsx",
+		"/home/arch3rex/Documents/Project/frontend/app/src/components/Project.jsx",
+		"/home/arch3rex/Documents/Project/frontend/app/src/components/Task.jsx",
+		"/home/arch3rex/Documents/Project/frontend/app/src/index.js",
+		"/home/arch3rex/Documents/Project/frontend/app/public/index.html",
+		"/home/arch3rex/Documents/Project/frontend/app/src/App.js",
+		"/home/arch3rex/Documents/Project/frontend/app/README.md",
+		"/home/arch3rex/Documents/Project/frontend/register.html",
+		"/home/arch3rex/Documents/Project/backend/index.js",
+		"/home/arch3rex/Documents/Project/frontend/login.html",
+		"/home/arch3rex/Documents/Project/frontend/index.html",
+		"/home/arch3rex/Documents/test-app/public/index.html",
+		"/home/arch3rex/Documents/test-app/src/index.js",
+		"/home/arch3rex/Documents/test-app/public/index.css",
+		"/home/arch3rex/Documents/test-app/src/Form.jsx",
+		"/home/arch3rex/Documents/test-app/src/input.jsx",
+		"/home/arch3rex/Documents/test-app/src/App.jsx",
+		"/home/arch3rex/Documents/react/react-app/src/Notez.jsx",
+		"/home/arch3rex/Documents/test-app/src/Entry.jsx",
+		"/home/arch3rex/Documents/test-app/src/contacts.js",
+		"/home/arch3rex/Documents/test-app/src/info.jsx",
+		"/home/arch3rex/Documents/test-app/public/info.jsx",
+		"/home/arch3rex/Documents/test-app/src/index.css",
+		"/home/arch3rex/Documents/test-app/src/conacts.js",
+		"/home/arch3rex/Documents/test-app/public/App.jsx",
+		"/home/arch3rex/Documents/react/react-app/public/styles.css",
+		"/home/arch3rex/Documents/react/react-app/src/app.jsx",
+		"/home/arch3rex/Documents/react/react-app/src/header.jsx",
+		"/home/arch3rex/Documents/react/react-app/src/footer.jsx",
+		"/home/arch3rex/Documents/react/react-app/src/note.jsx",
+		"/home/arch3rex/Documents/react/react-app/src/Note.jsx",
+		"/home/arch3rex/Documents/Secretsapp/.env",
+		"/home/arch3rex/Documents/Secretsapp/app.js",
+		"/home/arch3rex/Documents/todolist-v2-starting-files/public/css/styles.css",
+		"/home/arch3rex/Documents/todolist-v2-starting-files/untitled.html",
+		"/home/arch3rex/Documents/challenge3/views/post.ejs",
+		"/home/arch3rex/Documents/challenge3/views/compose.ejs",
+		"/home/arch3rex/Documents/challenge3/views/contact.ejs",
+		"/home/arch3rex/Documents/challenge3/views/partials/header.ejs",
+		"/home/arch3rex/Documents/challenge3/views/about.ejs",
+		"/home/arch3rex/Documents/challenge3/views/home.ejs",
+		"/home/arch3rex/Documents/challenge3/views/untitled.html",
+		"/home/arch3rex/Documents/todolistapp/styles.css",
+		"/home/arch3rex/Documents/todolistapp/package-lock.json",
+		"/home/arch3rex/test.py",
+		"/home/arch3rex/Documents/Simongame/Simon Game Challenge Starting Files/styles.css",
+		"/home/arch3rex/Documents/Simongame/Simon Game Challenge Starting Files/game.js",
+		"/home/arch3rex/Documents/Simongame/Simon Game Challenge Starting Files/index.html",
+		"/home/arch3rex/Documents/jquery/index.html",
+		"/home/arch3rex/Documents/Drum Kit /styles.css",
+		"/home/arch3rex/Documents/Drum Kit /index.js",
+		"/home/arch3rex/Documents/Drum Kit /index.html",
+		"/home/arch3rex/Documents/Drum Kit /sounds/bass.mp3",
+		"/home/arch3rex/Documents/Drum Kit /sounds/kick-bass.mp3",
+		"/home/arch3rex/Documents/course/index.html",
+		"/home/arch3rex/Documents/course/index.js",
+		"/home/arch3rex/Documents/course/index.css",
+		"/home/arch3rex/Documents/testpro/index.html",
+		"/home/arch3rex/Documents/testpro/index.js",
+		"/home/arch3rex/Documents/testpro/index.css",
+		"/home/arch3rex/Documents/testpro/htmlform.html",
+		"/home/arch3rex/Documents/testpro/app.js",
+		"/home/arch3rex/Documents/testpro/package.json",
+		"/home/arch3rex/Documents/testpro/helloexpress.js",
+		"/home/arch3rex/Documents/testpro/serve static file.js",
+		"/home/arch3rex/Documents/web/new.css",
+		"/home/arch3rex/Documents/web/js.js",
+		"/home/arch3rex/Documents/web/js.html",
+		"/home/arch3rex/Documents/web/index.html",
+		"/home/arch3rex/Documents/web/test.js",
+		"/home/arch3rex/Documents/index.html",
+		"/home/arch3rex/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/home/arch3rex/.config/sublime-text-3/Packages/User/PY3.sublime-build"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 56.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/PY3.sublime-build",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 287.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
