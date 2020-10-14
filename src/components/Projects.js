@@ -5,13 +5,25 @@ import axios from 'axios';
 const qs = require('qs');
 
 function Projects() {
+  const params = useParams();
+  const path = 'http://localhost:4000/projects/' + params.uname;
+
   const [store, setStore] = useState([]);
   const [projname, setProjName] = useState('');
   const [submit, setSubmit] = useState(false);
   const [click, setClick] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
 
-  const params = useParams();
-  const path = 'http://localhost:4000/projects/' + params.uname;
+    useEffect(() => {
+    axios
+      .get(path)
+      .then(response => {
+        setStore(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [click, submit, path, refreshing]);
 
   // uses store which contains all projects
   // to generate projforms
@@ -22,6 +34,8 @@ function Projects() {
         key={component._id}
         _id={component._id}
         handleClick={handleClick}
+        pathp={path}
+        refresh={refresh}
       />
     );
   }
@@ -73,17 +87,9 @@ function Projects() {
         console.log(err);
       });
   }
-
-  useEffect(() => {
-    axios
-      .get(path)
-      .then(response => {
-        setStore(response.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, [click, submit, path]);
+function refresh() {
+  setRefreshing(!refreshing);
+}
 
   return (
     <div className="container" styles={{ marginTop: '1em' }}>

@@ -4,14 +4,28 @@ import axios from 'axios';
 import Task from './Task';
 import ReactDOM from 'react-dom';
 import Form from './Form';
+import ProjectTitleForm from './ProjectTitleForm';
 const qs = require('qs');
 
 function Projform(props) {
+  const [form, setForm] = useState(false);
+  const path = 'http://localhost:4000/tasks/' + props._id;
   const [tasks, setTasks] = useState([]);
   const [delTask, setDelTask] = useState(false);
   const [postTasks, setPostTasks] = useState(false);
-  const [form, setForm] = useState(false);
-  const path = 'http://localhost:4000/tasks/' + props._id;
+  const [titleForm, setTitleForm] = useState(false);
+  const [refreshTasks, setRefreshTasks] = useState(false);
+
+   useEffect(() => {
+    axios
+      .get(path)
+      .then(response => {
+        setTasks(response.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [delTask, postTasks, path, refreshTasks]);
 
   // uses tasks which contain task related to project
   // to generate Task elements
@@ -25,6 +39,8 @@ function Projform(props) {
         deadline={component.deadline}
         isdone={component.isdone}
         deleteTasks={deleteTasks}
+        refreshPatchedTasks={refreshPatchedTasks}
+        patht={path}
       />
     );
   }
@@ -49,8 +65,7 @@ function Projform(props) {
   }
   // post task
   function makePostTasks(content, prior, deadline, isdone) {
-    console.log(path);
-    axios({
+       axios({
       method: 'post',
       url: path,
       data: qs.stringify({
@@ -76,16 +91,33 @@ function Projform(props) {
     setForm(true);
   }
 
-  useEffect(() => {
-    axios
-      .get(path)
+  function changeTitleForm() {
+  setTitleForm(true);
+}
+
+function patchProjectTitle(content) {
+  axios({
+      method: 'patch',
+      url: props.pathp,
+      data: qs.stringify({
+       _id: props._id,
+       name: content,
+      }),
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+      },
+    })
       .then(response => {
-        setTasks(response.data);
+        props.refresh();
       })
       .catch(err => {
         console.log(err);
       });
-  }, [delTask, postTasks, path]);
+      setTitleForm(false);
+}
+function refreshPatchedTasks() {
+  setRefreshTasks(!refreshTasks);
+}
 
   return (
     <div className="container" styles={{ marginTop: '1em' }}>
@@ -93,6 +125,7 @@ function Projform(props) {
         <div className="col-2"></div>
         <div className="col-8">
           <h3>{props.name}</h3>
+          <input className="btn btn-dark"type="button" value="prname" onClick={changeTitleForm}/>
           <span>
             <input
               className="btn btn-dark m-1"
@@ -112,6 +145,12 @@ function Projform(props) {
             />
           </span>
           {tasks.map(createTasks)}
+          {titleForm
+            ? ReactDOM.createPortal(
+              <ProjectTitleForm patchProjectTitle={patchProjectTitle} />,
+              document.getElementById('portal')
+              )
+            :null}
           {form
             ? ReactDOM.createPortal(
                 <Form makePostTasks={makePostTasks} />,
@@ -129,6 +168,8 @@ Projform.propTypes = {
   name: string,
   _id: string,
   handleClick: func,
+  pathp: string,
+  refresh: func,
 };
 
 export default Projform;
