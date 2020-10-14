@@ -3,8 +3,8 @@ import { string, func } from 'prop-types';
 import axios from 'axios';
 import Task from './Task';
 import ReactDOM from 'react-dom';
-import Form from './Form';
-import ProjectTitleForm from './ProjectTitleForm';
+import Form from '../Forms/Form';
+import ProjectTitleForm from '../Forms/ProjectTitleForm';
 const qs = require('qs');
 
 function Projform(props) {
@@ -16,7 +16,7 @@ function Projform(props) {
   const [titleForm, setTitleForm] = useState(false);
   const [refreshTasks, setRefreshTasks] = useState(false);
 
-   useEffect(() => {
+  useEffect(() => {
     axios
       .get(path)
       .then(response => {
@@ -65,7 +65,7 @@ function Projform(props) {
   }
   // post task
   function makePostTasks(content, prior, deadline, isdone) {
-       axios({
+    axios({
       method: 'post',
       url: path,
       data: qs.stringify({
@@ -92,16 +92,16 @@ function Projform(props) {
   }
 
   function changeTitleForm() {
-  setTitleForm(true);
-}
+    setTitleForm(true);
+  }
 
-function patchProjectTitle(content) {
-  axios({
+  function patchProjectTitle(content) {
+    axios({
       method: 'patch',
       url: props.pathp,
       data: qs.stringify({
-       _id: props._id,
-       name: content,
+        _id: props._id,
+        name: content,
       }),
       headers: {
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
@@ -113,11 +113,11 @@ function patchProjectTitle(content) {
       .catch(err => {
         console.log(err);
       });
-      setTitleForm(false);
-}
-function refreshPatchedTasks() {
-  setRefreshTasks(!refreshTasks);
-}
+    setTitleForm(false);
+  }
+  function refreshPatchedTasks() {
+    setRefreshTasks(!refreshTasks);
+  }
 
   return (
     <div className="container" styles={{ marginTop: '1em' }}>
@@ -125,7 +125,12 @@ function refreshPatchedTasks() {
         <div className="col-2"></div>
         <div className="col-8">
           <h3>{props.name}</h3>
-          <input className="btn btn-dark"type="button" value="prname" onClick={changeTitleForm}/>
+          <input
+            className="btn btn-dark"
+            type="button"
+            value="prname"
+            onClick={changeTitleForm}
+          />
           <span>
             <input
               className="btn btn-dark m-1"
@@ -147,10 +152,10 @@ function refreshPatchedTasks() {
           {tasks.map(createTasks)}
           {titleForm
             ? ReactDOM.createPortal(
-              <ProjectTitleForm patchProjectTitle={patchProjectTitle} />,
-              document.getElementById('portal')
+                <ProjectTitleForm patchProjectTitle={patchProjectTitle} />,
+                document.getElementById('portal')
               )
-            :null}
+            : null}
           {form
             ? ReactDOM.createPortal(
                 <Form makePostTasks={makePostTasks} />,

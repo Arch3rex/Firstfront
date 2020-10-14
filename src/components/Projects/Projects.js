@@ -14,7 +14,7 @@ function Projects() {
   const [click, setClick] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
     axios
       .get(path)
       .then(response => {
@@ -87,9 +87,9 @@ function Projects() {
         console.log(err);
       });
   }
-function refresh() {
-  setRefreshing(!refreshing);
-}
+  function refresh() {
+    setRefreshing(!refreshing);
+  }
 
   return (
     <div className="container" styles={{ marginTop: '1em' }}>

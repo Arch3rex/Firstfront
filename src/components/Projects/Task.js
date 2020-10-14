@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { string, func, number } from 'prop-types';
-import PatchTasksForm from './PatchTasksForm';
+import PatchTasksForm from '../Forms/PatchTasksForm';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 const qs = require('qs');
@@ -13,11 +13,11 @@ function Task(props) {
       method: 'patch',
       url: props.patht,
       data: qs.stringify({
-       _id: props._id,
-       content: cont,
-       prior: prior,
-       deadline: deadline,
-       isdone: isdone,
+        _id: props._id,
+        content: cont,
+        prior: prior,
+        deadline: deadline,
+        isdone: isdone,
       }),
       headers: {
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
@@ -29,15 +29,16 @@ function Task(props) {
       .catch(err => {
         console.log(err);
       });
-       setPatchTasksForm(false);
+    setPatchTasksForm(false);
   }
-  return (<div>
-    <ul styles={{ listStyle: 'none' }}>
-      <li>{props.content}</li>
-      <li>{props.prior}</li>
-      <li>{props.deadline}</li>
-      <li>{props.isdone}</li>
-    </ul>
+  return (
+    <div>
+      <ul styles={{ listStyle: 'none' }}>
+        <li>{props.content}</li>
+        <li>{props.prior}</li>
+        <li>{props.deadline}</li>
+        <li>{props.isdone}</li>
+      </ul>
       <input
         className="btn btn-dark m-1"
         onClick={() => {
@@ -48,7 +49,7 @@ function Task(props) {
       />
       <input
         className="btn btn-dark m-1"
-        onClick={()=>{
+        onClick={() => {
           setPatchTasksForm(true);
         }}
         type="button"
@@ -56,15 +57,16 @@ function Task(props) {
       />
       {patchTasksForm
         ? ReactDOM.createPortal(
-          <PatchTasksForm
-            patchTasks={patchTasks}
-            content={props.content}
-            prior={props.prior}
-            deadline={props.deadline}
-            isdone={props.isdone}/>,
+            <PatchTasksForm
+              patchTasks={patchTasks}
+              content={props.content}
+              prior={props.prior}
+              deadline={props.deadline}
+              isdone={props.isdone}
+            />,
             document.getElementById('portal')
           )
-         : null}
+        : null}
     </div>
   );
 }

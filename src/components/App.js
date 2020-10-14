@@ -1,8 +1,8 @@
 import React from 'react';
-import Start from './Start';
-import Login from './Login';
-import Register from './Register';
-import Projects from './Projects';
+import Start from './Login/Start';
+import Login from './Login/Login';
+import Register from './Login/Register';
+import Projects from './Projects/Projects';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
