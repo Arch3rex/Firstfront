@@ -11,14 +11,32 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-test-renderer": "^16.13.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "eslint --fix \"**/*.{js,jsx}\""
+    "lint": "eslint \"src/**/*.{js,jsx}\"",
+    "lint:staged": "lint-staged",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx}\"",
+    "format:fix": "prettier --write \"src/**/*.{js,jsx}\"",
+    "format:staged": "pretty-quick --staged",
+    "precommit": "npm run format:staged && npm run format:fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:fix && npm run precommit",
+      "pre-push": "npm run test && npm run build"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint --fix \"src/**/*.{js,jsx}\"",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +57,13 @@
     "eslint": "^6.6.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-react": "^7.21.4",
-    "eslint-plugin-react-hooks": "^4.1.2"
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "husky": "^4.3.0",
+    "prettier": "^1.15.3",
+    "pretty-quick": "^1.8.0",
+    "lint-staged": "^10.4.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jest-enzyme": "^7.1.2"
   }
 }
