@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { string, func, number } from 'prop-types';
+import React, { useState } from "react";
+import { string, func, number } from "prop-types";
 
 function PatchTasksForm(props) {
   const [cont, setCont] = useState(props.content);
   const [prior, setPrior] = useState(props.prior);
   const [deadline, setDeadline] = useState(props.deadline);
-  const [isdone, setIsDone] = useState(props.isdone);
 
   return (
     <div>
@@ -32,15 +31,8 @@ function PatchTasksForm(props) {
           value={deadline}
         />
         <input
-          onChange={event => {
-            setIsDone(event.target.value);
-          }}
-          type="textbox"
-          value={isdone}
-        />
-        <input
           onClick={() => {
-            props.patchTasks(cont, prior, deadline, isdone);
+            props.patchTasks(cont, prior, deadline);
           }}
           type="button"
           value="Send"
@@ -53,8 +45,7 @@ PatchTasksForm.propTypes = {
   patchTasks: func,
   content: string,
   prior: number,
-  deadline: string,
-  isdone: string,
+  deadline: string
 };
 
 export default PatchTasksForm;

@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
-import { string, func, number } from 'prop-types';
-import PatchTasksForm from '../Forms/PatchTasksForm';
-import axios from 'axios';
-import ReactDOM from 'react-dom';
-const qs = require('qs');
+import React, { useState } from "react";
+import { string, func, number } from "prop-types";
+import PatchTasksForm from "../Forms/PatchTasksForm";
+import axios from "axios";
+import ReactDOM from "react-dom";
+const qs = require("qs");
 
 function Task(props) {
   const [patchTasksForm, setPatchTasksForm] = useState(false);
+  const [isdone, setIsDone] = useState(false);
 
-  function patchTasks(cont, prior, deadline, isdone) {
+  function patchTasks(cont, prior, deadline) {
     axios({
-      method: 'patch',
+      method: "patch",
       url: props.patht,
       data: qs.stringify({
         _id: props._id,
         content: cont,
         prior: prior,
-        deadline: deadline,
-        isdone: isdone,
+        deadline: deadline
       }),
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-      },
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
+      }
     })
       .then(response => {
         props.refreshPatchedTasks();
@@ -33,11 +33,21 @@ function Task(props) {
   }
   return (
     <div>
-      <ul styles={{ listStyle: 'none' }}>
-        <li>{props.content}</li>
-        <li>{props.prior}</li>
-        <li>{props.deadline}</li>
-        <li>{props.isdone}</li>
+      <input
+        onClick={() => {
+          setIsDone(!isdone);
+        }}
+        type="checkbox"
+      />
+      <ul style={{ listStyle: "none" }}>
+        <li>Task| {props.content}</li>
+        <li>Priority| {props.prior}</li>
+        <li>Deadline| {props.deadline}</li>
+        {isdone ? (
+          <li style={{ color: "green" }}>Done</li>
+        ) : (
+          <li style={{ color: "red" }}>Not Done</li>
+        )}
       </ul>
       <input
         className="btn btn-dark m-1"
@@ -62,9 +72,8 @@ function Task(props) {
               content={props.content}
               prior={props.prior}
               deadline={props.deadline}
-              isdone={props.isdone}
             />,
-            document.getElementById('portal')
+            document.getElementById("portal")
           )
         : null}
     </div>
@@ -75,11 +84,10 @@ Task.propTypes = {
   content: string,
   prior: number,
   deadline: string,
-  isdone: string,
   deleteTasks: func,
   refreshPatchedTasks: func,
   _id: string,
-  patht: string,
+  patht: string
 };
 
 export default Task;

@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { func } from 'prop-types';
+import React, { useState } from "react";
+import { func } from "prop-types";
 
 function Form(props) {
-  const [content, setContent] = useState('');
-  const [prior, setPrior] = useState('');
-  const [deadline, setDeadline] = useState('');
-  const [isdone, setIsDone] = useState('');
+  const [content, setContent] = useState("");
+  const [prior, setPrior] = useState("");
+  const [deadline, setDeadline] = useState("");
 
   function getContent(event) {
     setContent(event.target.value);
@@ -15,9 +14,6 @@ function Form(props) {
   }
   function getDeadline(event) {
     setDeadline(event.target.value);
-  }
-  function getIsDone(event) {
-    setIsDone(event.target.value);
   }
 
   return (
@@ -44,16 +40,9 @@ function Form(props) {
         placeholder="Input deadline"
       />
       <input
-        className="form-control m-2 "
-        onChange={getIsDone}
-        value={isdone}
-        type="textbox"
-        placeholder="Input isdone"
-      />
-      <input
         className="btn btn-dark m-1 "
         onClick={() => {
-          props.makePostTasks(content, prior, deadline, isdone);
+          props.makePostTasks(content, prior, deadline);
         }}
         type="button"
         value="Create task"
@@ -63,7 +52,7 @@ function Form(props) {
 }
 
 Form.propTypes = {
-  makePostTasks: func,
+  makePostTasks: func
 };
 
 export default Form;

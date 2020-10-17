@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import Projform from './Projform';
-import axios from 'axios';
-const qs = require('qs');
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Projform from "./Projform";
+import axios from "axios";
+const qs = require("qs");
 
 function Projects() {
   const params = useParams();
-  const path = 'http://localhost:4000/projects/' + params.uname;
+  const path = "http://localhost:4000/projects/" + params.uname;
 
   const [store, setStore] = useState([]);
-  const [projname, setProjName] = useState('');
+  const [projname, setProjName] = useState("");
   const [submit, setSubmit] = useState(false);
   const [click, setClick] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
@@ -48,14 +48,14 @@ function Projects() {
   function handleSubmit(event) {
     console.log(projname);
     axios({
-      method: 'post',
+      method: "post",
       url: path,
       data: qs.stringify({
-        name: projname,
+        name: projname
       }),
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-      },
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
+      }
     })
       .then(response => {
         setSubmit(!submit);
@@ -70,15 +70,15 @@ function Projects() {
   function handleClick(projID) {
     console.log(projID);
     axios({
-      method: 'delete',
+      method: "delete",
       url: path,
       data: qs.stringify({
         _id: projID,
-        uname: params.uname,
+        uname: params.uname
       }),
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-      },
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
+      }
     })
       .then(response => {
         setClick(!click);
@@ -92,7 +92,7 @@ function Projects() {
   }
 
   return (
-    <div className="container" styles={{ marginTop: '1em' }}>
+    <div className="container" style={{ marginTop: "1em" }}>
       <div className="row justify-content-center align-items-center text-center">
         <div className="col-2"></div>
         <div className="col-8">
