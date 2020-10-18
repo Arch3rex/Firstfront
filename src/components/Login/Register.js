@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-const axios = require("axios");
-const qs = require("qs");
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+const axios = require('axios');
+const qs = require('qs');
 
 function Register() {
-  const [uname, setUname] = useState("");
-  const [password, setPassword] = useState("");
+  const [uname, setUname] = useState('');
+  const [password, setPassword] = useState('');
   const [isRedirect, setRedirect] = useState(false);
-  const redir = "/projects/" + uname;
+  const redir = '/projects/' + uname;
 
   function handleUname(event) {
     setUname(event.target.value);
@@ -19,15 +19,15 @@ function Register() {
   // post user
   function handleSubmit(event) {
     axios({
-      method: "post",
-      url: "http://localhost:4000/register",
+      method: 'post',
+      url: 'http://localhost:4000/register',
       data: qs.stringify({
         username: uname,
-        password: password
+        password: password,
       }),
       headers: {
-        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
-      }
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+      },
     })
       .then(response => {
         console.log(response);
@@ -47,7 +47,7 @@ function Register() {
     <div className="container">
       <div
         className="row justify-content-center align-items-center text-center"
-        style={{ height: "500px" }}
+        style={{ height: '500px' }}
       >
         <div className="col-2"></div>
         <div className="col-8">

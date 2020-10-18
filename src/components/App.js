@@ -1,14 +1,14 @@
-import React from 'react';
-import Start from './Login/Start';
-import Login from './Login/Login';
-import Register from './Login/Register';
-import Projects from './Projects/Projects';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from "react";
+import Start from "./Login/Start";
+import Login from "./Login/Login";
+import Register from "./Login/Register";
+import Projects from "./Projects/Projects";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <div className={'app'}>
+      <div className={"app"}>
         <Switch>
           <Route path="/" exact component={Start} />
 

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { string, func, number } from "prop-types";
+import React, { useState } from 'react';
+import { string, func, number } from 'prop-types';
 
 function PatchTasksForm(props) {
   const [cont, setCont] = useState(props.content);
@@ -45,7 +45,7 @@ PatchTasksForm.propTypes = {
   patchTasks: func,
   content: string,
   prior: number,
-  deadline: string
+  deadline: string,
 };
 
 export default PatchTasksForm;

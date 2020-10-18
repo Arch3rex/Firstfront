@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { string, func, number } from "prop-types";
-import PatchTasksForm from "../Forms/PatchTasksForm";
-import axios from "axios";
-import ReactDOM from "react-dom";
-const qs = require("qs");
+import React, { useState } from 'react';
+import { string, func, number } from 'prop-types';
+import PatchTasksForm from '../Forms/PatchTasksForm';
+import axios from 'axios';
+import ReactDOM from 'react-dom';
+const qs = require('qs');
 
 function Task(props) {
   const [patchTasksForm, setPatchTasksForm] = useState(false);
@@ -11,17 +11,17 @@ function Task(props) {
 
   function patchTasks(cont, prior, deadline) {
     axios({
-      method: "patch",
+      method: 'patch',
       url: props.patht,
       data: qs.stringify({
         _id: props._id,
         content: cont,
         prior: prior,
-        deadline: deadline
+        deadline: deadline,
       }),
       headers: {
-        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
-      }
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+      },
     })
       .then(response => {
         props.refreshPatchedTasks();
@@ -39,14 +39,14 @@ function Task(props) {
         }}
         type="checkbox"
       />
-      <ul style={{ listStyle: "none" }}>
+      <ul style={{ listStyle: 'none' }}>
         <li>Task| {props.content}</li>
         <li>Priority| {props.prior}</li>
         <li>Deadline| {props.deadline}</li>
         {isdone ? (
-          <li style={{ color: "green" }}>Done</li>
+          <li style={{ color: 'green' }}>Done</li>
         ) : (
-          <li style={{ color: "red" }}>Not Done</li>
+          <li style={{ color: 'red' }}>Not Done</li>
         )}
       </ul>
       <input
@@ -73,7 +73,7 @@ function Task(props) {
               prior={props.prior}
               deadline={props.deadline}
             />,
-            document.getElementById("portal")
+            document.getElementById('portal')
           )
         : null}
     </div>
@@ -87,7 +87,7 @@ Task.propTypes = {
   deleteTasks: func,
   refreshPatchedTasks: func,
   _id: string,
-  patht: string
+  patht: string,
 };
 
 export default Task;

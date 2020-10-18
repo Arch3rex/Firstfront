@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 function Start() {
   return (
-    <div className="container" style={{ marginTop: "1em" }}>
+    <div className="container" style={{ marginTop: '1em' }}>
       <h1 className="text-center">Register or login</h1>
       <div
         className="row justify-content-center text-center"
-        style={{ height: "500px" }}
+        style={{ height: '500px' }}
       >
         <div className="col-2"></div>
         <div className="col-8">
@@ -14,7 +14,7 @@ function Start() {
             <Link to="/register">
               <input
                 className="btn btn-dark m-1"
-                style={{ width: "20%" }}
+                style={{ width: '20%' }}
                 type="submit"
                 value="Register"
               />
@@ -22,7 +22,7 @@ function Start() {
             <Link to="/login">
               <input
                 className="btn btn-dark m-1"
-                style={{ width: "20%" }}
+                style={{ width: '20%' }}
                 type="submit"
                 value="Login"
               />

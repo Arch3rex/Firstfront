@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { string, func } from "prop-types";
-import axios from "axios";
-import Task from "./Task";
-import ReactDOM from "react-dom";
-import Form from "../Forms/Form";
-import ProjectTitleForm from "../Forms/ProjectTitleForm";
-const qs = require("qs");
+import React, { useState, useEffect } from 'react';
+import { string, func } from 'prop-types';
+import axios from 'axios';
+import Task from './Task';
+import ReactDOM from 'react-dom';
+import Form from '../Forms/Form';
+import ProjectTitleForm from '../Forms/ProjectTitleForm';
+const qs = require('qs');
 
 function Projform(props) {
   const [form, setForm] = useState(false);
-  const path = "http://localhost:4000/tasks/" + props._id;
+  const path = 'http://localhost:4000/tasks/' + props._id;
   const [tasks, setTasks] = useState([]);
   const [delTask, setDelTask] = useState(false);
   const [postTasks, setPostTasks] = useState(false);
@@ -46,14 +46,14 @@ function Projform(props) {
   // delete task
   function deleteTasks(TID) {
     axios({
-      method: "delete",
+      method: 'delete',
       url: path,
       data: qs.stringify({
-        _tid: TID
+        _tid: TID,
       }),
       headers: {
-        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
-      }
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+      },
     })
       .then(response => {
         setDelTask(!delTask);
@@ -65,16 +65,16 @@ function Projform(props) {
   // post task
   function makePostTasks(content, prior, deadline) {
     axios({
-      method: "post",
+      method: 'post',
       url: path,
       data: qs.stringify({
         content: content,
         prior: prior,
-        deadline: deadline
+        deadline: deadline,
       }),
       headers: {
-        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
-      }
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+      },
     })
       .then(response => {
         setPostTasks(!postTasks);
@@ -95,15 +95,15 @@ function Projform(props) {
 
   function patchProjectTitle(content) {
     axios({
-      method: "patch",
+      method: 'patch',
       url: props.pathp,
       data: qs.stringify({
         _id: props._id,
-        name: content
+        name: content,
       }),
       headers: {
-        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
-      }
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+      },
     })
       .then(response => {
         props.refresh();
@@ -118,7 +118,7 @@ function Projform(props) {
   }
 
   return (
-    <div className="container" style={{ marginTop: "1em" }}>
+    <div className="container" style={{ marginTop: '1em' }}>
       <div className="row justify-content-center align-items-center text-center">
         <div className="col-2"></div>
         <div className="col-8">
@@ -132,7 +132,7 @@ function Projform(props) {
           <span>
             <input
               className="btn btn-dark m-1"
-              style={{ width: "13%" }}
+              style={{ width: '13%' }}
               onClick={() => {
                 props.handleClick(props._id);
               }}
@@ -141,7 +141,7 @@ function Projform(props) {
             />
             <input
               className="btn btn-dark m-1"
-              style={{ width: "13%" }}
+              style={{ width: '13%' }}
               onClick={showForm}
               type="button"
               value="+Task"
@@ -151,13 +151,13 @@ function Projform(props) {
           {titleForm
             ? ReactDOM.createPortal(
                 <ProjectTitleForm patchProjectTitle={patchProjectTitle} />,
-                document.getElementById("portal")
+                document.getElementById('portal')
               )
             : null}
           {form
             ? ReactDOM.createPortal(
                 <Form makePostTasks={makePostTasks} />,
-                document.getElementById("portal")
+                document.getElementById('portal')
               )
             : null}
         </div>
@@ -172,7 +172,7 @@ Projform.propTypes = {
   _id: string,
   handleClick: func,
   pathp: string,
-  refresh: func
+  refresh: func,
 };
 
 export default Projform;

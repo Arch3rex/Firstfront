@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { func } from 'prop-types';
+import React, { useState } from "react";
+import { func } from "prop-types";
 
 function ProjectTitleForm(props) {
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState("");
   function changeContent(event) {
     setContent(event.target.value);
   }
@@ -29,7 +29,7 @@ function ProjectTitleForm(props) {
   );
 }
 ProjectTitleForm.propTypes = {
-  patchProjectTitle: func,
+  patchProjectTitle: func
 };
 
 export default ProjectTitleForm;
