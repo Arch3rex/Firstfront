@@ -35,7 +35,7 @@ function Task(props) {
       url: props.patht,
       data: qs.stringify({
         _id: props._id,
-        isdone: !props.isdone,
+        isDone: !props.isDone,
       }),
       headers: {
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
@@ -51,20 +51,14 @@ function Task(props) {
 
   return (
     <div>
-      {props.isdone === true ? (
-        <input onClick={patchIsDone} type="checkbox" checked />
-      ) : (
-        <input onClick={patchIsDone} type="checkbox" />
-      )}
+      <input onClick={patchIsDone} type="checkbox" checked={!!props.isDone} />
       <ul style={{ listStyle: 'none' }}>
         <li>Task| {props.content}</li>
         <li>Priority| {props.prior}</li>
         <li>Deadline| {props.deadline}</li>
-        {props.isdone === true ? (
-          <li style={{ color: 'green' }}>Done</li>
-        ) : (
-          <li style={{ color: 'red' }}>Not Done</li>
-        )}
+        <li style={{ color: props.isDone === true ? 'green' : 'red' }}>
+          {props.isDone === true ? 'Done' : 'Not Done'}
+        </li>
       </ul>
       <input
         className="btn btn-dark m-1"
@@ -104,7 +98,7 @@ Task.propTypes = {
   deleteTasks: func,
   refreshPatchedTasks: func,
   _id: string,
-  isdone: boolean,
+  isDone: boolean,
   refreshingIsDone: func,
   patht: string,
 };

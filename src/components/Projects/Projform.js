@@ -41,7 +41,7 @@ function Projform(props) {
         deleteTasks={deleteTasks}
         refreshPatchedTasks={refreshPatchedTasks}
         patht={path}
-        isdone={component.isdone}
+        isDone={component.isDone}
         refreshingIsDone={refreshingIsDone}
       />
     );
@@ -74,7 +74,7 @@ function Projform(props) {
         content: content,
         prior: prior,
         deadline: deadline,
-        isdone: false,
+        isDone: false,
       }),
       headers: {
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
