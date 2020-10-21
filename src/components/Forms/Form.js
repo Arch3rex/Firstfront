@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { func } from "prop-types";
+import React, { useState } from 'react';
+import { func } from 'prop-types';
 
 function Form(props) {
-  const [content, setContent] = useState("");
-  const [prior, setPrior] = useState("");
-  const [deadline, setDeadline] = useState("");
+  const [content, setContent] = useState('');
+  const [prior, setPrior] = useState('');
+  const [deadline, setDeadline] = useState('');
 
   function getContent(event) {
     setContent(event.target.value);
@@ -52,7 +52,7 @@ function Form(props) {
 }
 
 Form.propTypes = {
-  makePostTasks: func
+  makePostTasks: func,
 };
 
 export default Form;

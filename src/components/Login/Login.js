@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
-const axios = require("axios");
-const qs = require("qs");
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+const axios = require('axios');
+const qs = require('qs');
 
 function Login() {
-  const [user, setUser] = useState("");
-  const [pwd, setPwd] = useState("");
+  const [user, setUser] = useState('');
+  const [pwd, setPwd] = useState('');
   const [isRedirect, setIsRedirect] = useState(false);
 
   function handleUser(event) {
     setUser(event.target.value);
   }
-  const redir = "/projects/" + user;
+  const redir = '/projects/' + user;
   function handlePwd(event) {
     setPwd(event.target.value);
   }
@@ -19,15 +19,15 @@ function Login() {
     console.log(user);
     console.log(pwd);
     axios({
-      method: "post",
-      url: "http://localhost:4000/login",
+      method: 'post',
+      url: 'http://localhost:4000/login',
       data: qs.stringify({
         username: user,
-        password: pwd
+        password: pwd,
       }),
       headers: {
-        "content-type": "application/x-www-form-urlencoded;charset=utf-8"
-      }
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+      },
     })
       .then(response => {
         console.log(response);
@@ -48,7 +48,7 @@ function Login() {
     <div className="container">
       <div
         className="row justify-content-center text-center align-items-center"
-        style={{ height: "500px" }}
+        style={{ height: '500px' }}
       >
         <div className="col-2"></div>
         <div className="col-8">
