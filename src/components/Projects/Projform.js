@@ -5,7 +5,6 @@ import Task from './Task';
 import ReactDOM from 'react-dom';
 import Form from '../Forms/Form';
 import ProjectTitleForm from '../Forms/ProjectTitleForm';
-const qs = require('qs');
 
 function Projform(props) {
   const [form, setForm] = useState(false);
@@ -21,7 +20,7 @@ function Projform(props) {
     axios
       .get(path)
       .then(response => {
-        setTasks(response.data);
+        setTasks(response.data.data);
       })
       .catch(err => {
         console.log(err);
@@ -51,11 +50,11 @@ function Projform(props) {
     axios({
       method: 'delete',
       url: path,
-      data: qs.stringify({
+      data: {
         _tid: TID,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {
@@ -70,14 +69,14 @@ function Projform(props) {
     axios({
       method: 'post',
       url: path,
-      data: qs.stringify({
+      data: {
         content: content,
         prior: prior,
         deadline: deadline,
         isDone: false,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {
@@ -103,12 +102,12 @@ function Projform(props) {
     axios({
       method: 'patch',
       url: props.pathp,
-      data: qs.stringify({
+      data: {
         _id: props._id,
         name: content,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {

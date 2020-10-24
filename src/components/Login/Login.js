@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 const axios = require('axios');
-const qs = require('qs');
 
 function Login() {
   const [user, setUser] = useState('');
@@ -21,12 +20,12 @@ function Login() {
     axios({
       method: 'post',
       url: 'http://localhost:4000/login',
-      data: qs.stringify({
+      data: {
         username: user,
         password: pwd,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {

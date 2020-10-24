@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Projform from './Projform';
 import axios from 'axios';
-const qs = require('qs');
 
 function Projects() {
   const params = useParams();
@@ -18,7 +17,7 @@ function Projects() {
     axios
       .get(path)
       .then(response => {
-        setStore(response.data);
+        setStore(response.data.data);
       })
       .catch(err => {
         console.log(err);
@@ -50,11 +49,11 @@ function Projects() {
     axios({
       method: 'post',
       url: path,
-      data: qs.stringify({
+      data: {
         name: projname,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {
@@ -72,12 +71,12 @@ function Projects() {
     axios({
       method: 'delete',
       url: path,
-      data: qs.stringify({
+      data: {
         _id: projID,
         uname: params.uname,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {

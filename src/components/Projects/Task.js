@@ -3,7 +3,6 @@ import { string, func, number, boolean } from 'prop-types';
 import PatchTasksForm from '../Forms/PatchTasksForm';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
-const qs = require('qs');
 
 function Task(props) {
   const [patchTasksForm, setPatchTasksForm] = useState(false);
@@ -11,14 +10,14 @@ function Task(props) {
     axios({
       method: 'patch',
       url: props.patht,
-      data: qs.stringify({
+      data: {
         _id: props._id,
         content: cont,
         prior: prior,
         deadline: deadline,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {
@@ -33,12 +32,12 @@ function Task(props) {
     axios({
       method: 'patch',
       url: props.patht,
-      data: qs.stringify({
+      data: {
         _id: props._id,
         isDone: !props.isDone,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {

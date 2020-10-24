@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 const axios = require('axios');
-const qs = require('qs');
 
 function Register() {
   const [uname, setUname] = useState('');
@@ -21,12 +20,12 @@ function Register() {
     axios({
       method: 'post',
       url: 'http://localhost:4000/register',
-      data: qs.stringify({
+      data: {
         username: uname,
         password: password,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {
