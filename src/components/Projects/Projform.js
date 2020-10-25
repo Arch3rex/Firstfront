@@ -5,7 +5,6 @@ import Task from './Task';
 import ReactDOM from 'react-dom';
 import Form from '../Forms/Form';
 import ProjectTitleForm from '../Forms/ProjectTitleForm';
-const qs = require('qs');
 
 function Projform(props) {
   const [form, setForm] = useState(false);
@@ -15,17 +14,18 @@ function Projform(props) {
   const [postTasks, setPostTasks] = useState(false);
   const [titleForm, setTitleForm] = useState(false);
   const [refreshTasks, setRefreshTasks] = useState(false);
+  const [refreshIsDone, setRefreshIsDone] = useState(false);
 
   useEffect(() => {
     axios
       .get(path)
       .then(response => {
-        setTasks(response.data);
+        setTasks(response.data.data);
       })
       .catch(err => {
         console.log(err);
       });
-  }, [delTask, postTasks, path, refreshTasks]);
+  }, [delTask, postTasks, path, refreshTasks, refreshIsDone]);
 
   // uses tasks which contain task related to project
   // to generate Task elements
@@ -40,6 +40,8 @@ function Projform(props) {
         deleteTasks={deleteTasks}
         refreshPatchedTasks={refreshPatchedTasks}
         patht={path}
+        isDone={component.isDone}
+        refreshingIsDone={refreshingIsDone}
       />
     );
   }
@@ -48,11 +50,11 @@ function Projform(props) {
     axios({
       method: 'delete',
       url: path,
-      data: qs.stringify({
+      data: {
         _tid: TID,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {
@@ -67,13 +69,14 @@ function Projform(props) {
     axios({
       method: 'post',
       url: path,
-      data: qs.stringify({
+      data: {
         content: content,
         prior: prior,
         deadline: deadline,
-      }),
+        isDone: false,
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {
@@ -92,17 +95,19 @@ function Projform(props) {
   function changeTitleForm() {
     setTitleForm(true);
   }
-
+  function refreshingIsDone() {
+    setRefreshIsDone(!refreshIsDone);
+  }
   function patchProjectTitle(content) {
     axios({
       method: 'patch',
       url: props.pathp,
-      data: qs.stringify({
+      data: {
         _id: props._id,
         name: content,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {

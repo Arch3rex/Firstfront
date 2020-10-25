@@ -1,26 +1,23 @@
 import React, { useState } from 'react';
-import { string, func, number } from 'prop-types';
+import { string, func, number, boolean } from 'prop-types';
 import PatchTasksForm from '../Forms/PatchTasksForm';
 import axios from 'axios';
 import ReactDOM from 'react-dom';
-const qs = require('qs');
 
 function Task(props) {
   const [patchTasksForm, setPatchTasksForm] = useState(false);
-  const [isdone, setIsDone] = useState(false);
-
   function patchTasks(cont, prior, deadline) {
     axios({
       method: 'patch',
       url: props.patht,
-      data: qs.stringify({
+      data: {
         _id: props._id,
         content: cont,
         prior: prior,
         deadline: deadline,
-      }),
+      },
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json',
       },
     })
       .then(response => {
@@ -31,23 +28,36 @@ function Task(props) {
       });
     setPatchTasksForm(false);
   }
+  function patchIsDone() {
+    axios({
+      method: 'patch',
+      url: props.patht,
+      data: {
+        _id: props._id,
+        isDone: !props.isDone,
+      },
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
+      .then(response => {
+        props.refreshingIsDone();
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   return (
     <div>
-      <input
-        onClick={() => {
-          setIsDone(!isdone);
-        }}
-        type="checkbox"
-      />
+      <input onClick={patchIsDone} type="checkbox" checked={!!props.isDone} />
       <ul style={{ listStyle: 'none' }}>
         <li>Task| {props.content}</li>
         <li>Priority| {props.prior}</li>
         <li>Deadline| {props.deadline}</li>
-        {isdone ? (
-          <li style={{ color: 'green' }}>Done</li>
-        ) : (
-          <li style={{ color: 'red' }}>Not Done</li>
-        )}
+        <li style={{ color: props.isDone === true ? 'green' : 'red' }}>
+          {props.isDone === true ? 'Done' : 'Not Done'}
+        </li>
       </ul>
       <input
         className="btn btn-dark m-1"
@@ -87,6 +97,8 @@ Task.propTypes = {
   deleteTasks: func,
   refreshPatchedTasks: func,
   _id: string,
+  isDone: boolean,
+  refreshingIsDone: func,
   patht: string,
 };
 
