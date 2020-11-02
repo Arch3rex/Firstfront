@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 
 function Task(props) {
   const [patchTasksForm, setPatchTasksForm] = useState(false);
+  const authToken = localStorage.getItem('auth-token');
   function patchTasks(cont, prior, deadline) {
     axios({
       method: 'patch',
@@ -17,6 +18,7 @@ function Task(props) {
         deadline: deadline,
       },
       headers: {
+        'auth-token': authToken,
         'content-type': 'application/json',
       },
     })
@@ -37,6 +39,7 @@ function Task(props) {
         isDone: !props.isDone,
       },
       headers: {
+        'auth-token': authToken,
         'content-type': 'application/json',
       },
     })
@@ -50,7 +53,7 @@ function Task(props) {
 
   return (
     <div>
-      <input onClick={patchIsDone} type="checkbox" checked={!!props.isDone} />
+      <input onChange={patchIsDone} type="checkbox" checked={!!props.isDone} />
       <ul style={{ listStyle: 'none' }}>
         <li>Task| {props.content}</li>
         <li>Priority| {props.prior}</li>

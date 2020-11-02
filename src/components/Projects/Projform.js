@@ -15,17 +15,24 @@ function Projform(props) {
   const [titleForm, setTitleForm] = useState(false);
   const [refreshTasks, setRefreshTasks] = useState(false);
   const [refreshIsDone, setRefreshIsDone] = useState(false);
+  const authToken = localStorage.getItem('auth-token');
 
   useEffect(() => {
-    axios
-      .get(path)
+    axios({
+      method: 'get',
+      url: path,
+      headers: {
+        'auth-token': authToken,
+        'content-type': 'application/json',
+      },
+    })
       .then(response => {
         setTasks(response.data.data);
       })
       .catch(err => {
         console.log(err);
       });
-  }, [delTask, postTasks, path, refreshTasks, refreshIsDone]);
+  }, [delTask, postTasks, path, refreshTasks, refreshIsDone, authToken]);
 
   // uses tasks which contain task related to project
   // to generate Task elements
@@ -54,6 +61,7 @@ function Projform(props) {
         _tid: TID,
       },
       headers: {
+        'auth-token': authToken,
         'content-type': 'application/json',
       },
     })
@@ -76,6 +84,7 @@ function Projform(props) {
         isDone: false,
       },
       headers: {
+        'auth-token': authToken,
         'content-type': 'application/json',
       },
     })
@@ -107,6 +116,7 @@ function Projform(props) {
         name: content,
       },
       headers: {
+        'auth-token': authToken,
         'content-type': 'application/json',
       },
     })

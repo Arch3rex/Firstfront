@@ -1,6 +1,6 @@
 import React from 'react';
 import Start from './Login/Start';
-import Login from './Login/Login';
+import Login from './Login/Login.js';
 import Register from './Login/Register';
 import Projects from './Projects/Projects';
 import WrongRoute from './WrongRoute';

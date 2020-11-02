@@ -30,6 +30,7 @@ function Login() {
     })
       .then(response => {
         console.log(response);
+        localStorage.setItem('auth-token', response.data.token);
       })
       .then(() => {
         setIsRedirect(true);
@@ -40,7 +41,7 @@ function Login() {
 
     event.preventDefault();
   }
-
+  console.log(isRedirect);
   return isRedirect ? (
     <Redirect to={redir} />
   ) : (

@@ -6,7 +6,7 @@ import axios from 'axios';
 function Projects() {
   const params = useParams();
   const path = 'http://localhost:4000/projects/' + params.uname;
-
+  const authToken = localStorage.getItem('auth-token');
   const [store, setStore] = useState([]);
   const [projname, setProjName] = useState('');
   const [submit, setSubmit] = useState(false);
@@ -14,15 +14,21 @@ function Projects() {
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(path)
+    axios({
+      method: 'get',
+      url: path,
+      headers: {
+        'auth-token': authToken,
+        'content-type': 'application/json',
+      },
+    })
       .then(response => {
         setStore(response.data.data);
       })
       .catch(err => {
         console.log(err);
       });
-  }, [click, submit, path, refreshing]);
+  }, [click, submit, path, refreshing, authToken]);
 
   // uses store which contains all projects
   // to generate projforms
@@ -53,6 +59,7 @@ function Projects() {
         name: projname,
       },
       headers: {
+        'auth-token': authToken,
         'content-type': 'application/json',
       },
     })
@@ -76,6 +83,7 @@ function Projects() {
         uname: params.uname,
       },
       headers: {
+        'auth-token': authToken,
         'content-type': 'application/json',
       },
     })
