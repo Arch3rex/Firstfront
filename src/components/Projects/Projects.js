@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Projform from './Projform';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 function Projects() {
   const params = useParams();
   const path = 'http://localhost:4000/projects/' + params.uname;
 
+  const [jwt] = useState(() => {
+    return localStorage.getItem('jwt');
+  });
   const [store, setStore] = useState([]);
   const [projname, setProjName] = useState('');
   const [submit, setSubmit] = useState(false);
@@ -15,14 +19,18 @@ function Projects() {
 
   useEffect(() => {
     axios
-      .get(path)
+      .get(path, {
+        headers: {
+          Authorization: 'Bearer ' + jwt,
+        },
+      })
       .then(response => {
         setStore(response.data.data);
       })
       .catch(err => {
         console.log(err);
       });
-  }, [click, submit, path, refreshing]);
+  }, [click, submit, path, refreshing, jwt]);
 
   // uses store which contains all projects
   // to generate projforms
@@ -89,6 +97,8 @@ function Projects() {
   function refresh() {
     setRefreshing(!refreshing);
   }
+
+  if (!jwt) return <Redirect to={'/login'} />;
 
   return (
     <div className="container" style={{ marginTop: '1em' }}>

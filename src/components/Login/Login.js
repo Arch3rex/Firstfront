@@ -28,8 +28,8 @@ function Login() {
         'content-type': 'application/json',
       },
     })
-      .then(response => {
-        console.log(response);
+      .then(({ data }) => {
+        localStorage.setItem('jwt', data.token);
       })
       .then(() => {
         setIsRedirect(true);
